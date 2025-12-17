@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Karir SolvImport - Join the Global Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        /* BRANDING COLORS */
+        :root {
+            --orange-solv: #F97316;
+            --blue-solv: #0EA5E9; /* Sky Blue / Biru Muda */
+        }
+
+        /* CUSTOM INPUT */
+        .input-si { 
+            @apply w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-sky-400 focus:border-sky-400 outline-none transition-all duration-300 text-slate-800 font-medium placeholder-slate-400; 
+        }
+
+        /* CARD SELECTION */
+        .role-card {
+            @apply relative border-2 border-slate-100 bg-white p-4 rounded-2xl cursor-pointer transition-all duration-200 hover:shadow-lg flex flex-col items-center text-center gap-2 group overflow-hidden;
+        }
+        
+        /* STATE CHECKED */
+        .role-radio:checked + .role-card {
+            @apply border-sky-400 bg-sky-50 ring-1 ring-sky-400 shadow-md;
+        }
+        .role-radio:checked + .role-card h3 {
+            @apply text-sky-700;
+        }
+
+        /* ANIMATION */
+        .fade-in { animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+
+    <div class="max-w-3xl mx-auto min-h-screen bg-white shadow-2xl relative border-x border-slate-200">
+        
+        <!-- HEADER (Fusi Orange & Biru Muda) -->
+        <div class="bg-gradient-to-r from-orange-500 via-orange-400 to-sky-400 px-8 pt-12 pb-20 rounded-b-[3rem] relative overflow-hidden text-center z-10 shadow-xl">
+            <!-- Abstract Shapes -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-sky-300 mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-200 mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2 drop-shadow-sm">SOLVIMPORT</h1>
+            <div class="inline-flex items-center gap-2 bg-white/20 border border-white/30 px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
+                <span class="text-white text-xs font-bold tracking-widest uppercase">Global Logistics & Trading</span>
+            </div>
+            <p class="text-white/90 mt-4 max-w-lg mx-auto text-sm md:text-base font-medium leading-relaxed">
+                Kami mencari otak data yang tajam, pemasar yang jenius, dan kreator visual yang estetik untuk mendominasi pasar impor.
+            </p>
+        </div>
+
+        <!-- FORM START -->
+        <form action="https://formspree.io/f/xkgqwgla" method="POST" class="px-6 md:px-12 -mt-10 relative z-20 space-y-10">
+
+            <!-- 1. PILIH POSISI (The Gate) -->
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-slate-100 fade-in">
+                <div class="text-center mb-6">
+                    <h2 class="text-lg font-bold text-slate-900">Pilih Jalur Karirmu</h2>
+                    <p class="text-xs text-slate-400">Pastikan sesuai skill utamamu</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Data Analyst -->
+                    <label>
+                        <input type="radio" name="posisi" value="Data Analyst" class="role-radio hidden" required>
+                        <div class="role-card">
+                            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-2xl mb-1 group-hover:scale-110 transition-transform">📊</div>
+                            <h3 class="font-bold text-slate-700">Data Analyst</h3>
+                            <p class="text-[10px] text-slate-400">Logika, Excel, Pola</p>
+                        </div>
+                    </label>
+
+                    <!-- Marketing -->
+                    <label>
+                        <input type="radio" name="posisi" value="Marketing Specialist" class="role-radio hidden">
+                        <div class="role-card">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl mb-1 group-hover:scale-110 transition-transform">🚀</div>
+                            <h3 class="font-bold text-slate-700">Marketing</h3>
+                            <p class="text-[10px] text-slate-400">Strategi, Ads, Cuan</p>
+                        </div>
+                    </label>
+
+                    <!-- Media -->
+                    <label>
+                        <input type="radio" name="posisi" value="Media Creative" class="role-radio hidden">
+                        <div class="role-card">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-2xl mb-1 group-hover:scale-110 transition-transform">🎨</div>
+                            <h3 class="font-bold text-slate-700">Media Team</h3>
+                            <p class="text-[10px] text-slate-400">Visual, Video, Design</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 2. DATA DIRI -->
+            <div class="fade-in delay-1">
+                <div class="flex items-center gap-3 mb-4 pl-2">
+                    <div class="h-8 w-1 bg-orange-500 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-800">Profil Kandidat</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Nama Lengkap</label>
+                            <input type="text" name="nama" required class="input-si" placeholder="Nama Asli">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">WhatsApp</label>
+                            <input type="tel" name="whatsapp" required class="input-si" placeholder="08xxxxx">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Email</label>
+                        <input type="email" name="email" required class="input-si" placeholder="email@kamu.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sky-600 uppercase mb-2">Link LinkedIn / Instagram (Wajib)</label>
+                        <input type="text" name="sosmed" required class="input-si bg-sky-50 border-sky-200 text-sky-800 focus:ring-sky-500" placeholder="https://...">
+                        <p class="text-[10px] text-slate-400 mt-1">Ini adalah "Wajah Digital" kamu. Jangan di-private.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. PSIKOLOGI & MINDSET (The SolvImport Mindset) -->
+            <div class="fade-in delay-2">
+                <div class="flex items-center gap-3 mb-4 pl-2">
+                    <div class="h-8 w-1 bg-sky-500 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-800">Psikologi & Mindset</h2>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500 rounded-full blur-3xl opacity-20 translate-x-10 -translate-y-10"></div>
+                    
+                    <p class="text-sm text-slate-300 mb-6 italic border-l-2 border-orange-500 pl-4">
+                        "Skill teknis bisa diajarkan, tapi karakter itu bawaan. Jawablah dengan jujur, bukan jawaban template."
+                    </p>
+
+                    <div class="space-y-8">
+                        <!-- Q1: Integritas -->
+                        <div>
+                            <label class="block text-sm font-bold text-sky-300 mb-2">Skenario 1: Integritas vs Profit ⚖️</label>
+                            <p class="text-xs text-slate-400 mb-3">
+                                "Kamu menemukan celah sistem yang bisa bikin omzet perusahaan naik drastis hari ini, tapi ada risiko kecil merugikan customer di masa depan. Atasan sedang tidak ada. Apa yang kamu lakukan?"
+                            </p>
+                            <textarea name="psycho_integrity" rows="3" required class="w-full p-4 bg-slate-800 border border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none text-white placeholder-slate-500" placeholder="Keputusan saya..."></textarea>
+                        </div>
+
+                        <!-- Q2: Problem Solving -->
+                        <div>
+                            <label class="block text-sm font-bold text-orange-400 mb-2">Skenario 2: Under Pressure 🔥</label>
+                            <p class="text-xs text-slate-400 mb-3">
+                                "Deadlinemu 1 jam lagi. Data belum lengkap / Iklan boncos / Video korup (sesuai posisimu). Kamu tahu hasilnya tidak akan sempurna jika dipaksa. Apa strategimu? Kirim apa adanya, atau minta waktu tambahan dengan risiko dimarahin?"
+                            </p>
+                            <textarea name="psycho_pressure" rows="3" required class="w-full p-4 bg-slate-800 border border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none text-white placeholder-slate-500" placeholder="Saya akan memilih..."></textarea>
+                        </div>
+
+                        <!-- Q3: Growth -->
+                        <div>
+                            <label class="block text-sm font-bold text-white mb-2">Skenario 3: Kritik Tajam 🛡️</label>
+                            <p class="text-xs text-slate-400 mb-3">
+                                "Sebutkan satu kritik paling pedas yang pernah kamu terima dari atasan/klien sebelumnya. Bagaimana kamu meresponnya saat itu, dan apa yang kamu ubah setelahnya?"
+                            </p>
+                            <input type="text" name="psycho_growth" required class="w-full p-4 bg-slate-800 border border-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none text-white placeholder-slate-500" placeholder="Cerita singkat...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. TECHNICAL & GEAR -->
+            <div class="fade-in delay-3">
+                <div class="flex items-center gap-3 mb-4 pl-2">
+                    <div class="h-8 w-1 bg-slate-300 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-800">Skill & Tools</h2>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <div class="space-y-5">
+                        <!-- Tools -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Software / Tools Andalanmu</label>
+                            <p class="text-[10px] text-slate-400 mb-2">Sebutkan tools spesifik (Misal: Python, Tableau, Meta Ads, Premiere Pro, CapCut, dll)</p>
+                            <input type="text" name="tools_mastery" required class="input-si" placeholder="Tuliskan semua di sini...">
+                        </div>
+
+                        <!-- Gear (Laptop/HP) -->
+                        <div class="bg-sky-50 p-4 rounded-xl border border-sky-100">
+                            <label class="block text-xs font-bold text-sky-800 uppercase mb-2">Spesifikasi Laptop/PC & HP</label>
+                            <input type="text" name="gear_specs" required class="input-si bg-white" placeholder="Cth: Laptop i5 RAM 16GB + HP iPhone 11">
+                            <p class="text-[10px] text-sky-600 mt-1">Kami perlu tahu untuk menyesuaikan beban kerja (Rendering/Data Processing).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. FINAL (Portfolio & Salary) -->
+            <div class="fade-in delay-3">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Ekspektasi Gaji</label>
+                            <input type="text" name="gaji" required class="input-si" placeholder="Rp ...">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Siap Mulai</label>
+                            <input type="text" name="start_date" required class="input-si" placeholder="Tanggal">
+                        </div>
+                    </div>
+
+                    <!-- Upload Link -->
+                    <div class="border-2 border-dashed border-orange-300 bg-orange-50/50 rounded-xl p-6 text-center group hover:bg-orange-50 transition-colors">
+                        <label class="block text-sm font-bold text-orange-800 mb-2">Link CV & Portfolio (Google Drive)</label>
+                        <input type="url" name="portfolio_link" required class="w-full text-center bg-white border border-orange-200 rounded-lg p-3 focus:ring-2 focus:ring-orange-400 outline-none text-orange-700 font-medium placeholder-slate-300" placeholder="https://drive.google.com/...">
+                        <p class="text-[10px] text-orange-600 font-bold mt-2">
+                            ⚠️ WAJIB: Setting akses "Public / Anyone with the link".
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="pt-6 fade-in delay-3">
+                <button type="submit" class="w-full bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white font-extrabold py-5 rounded-2xl shadow-xl shadow-sky-400/30 transform transition hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-2 text-lg uppercase tracking-wide">
+                    <span>Kirim Lamaran</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+                <p class="text-center text-slate-400 text-xs mt-6 font-medium">&copy; 2025 SolvImport Recruitment</p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+  </html>
